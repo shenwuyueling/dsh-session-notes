@@ -1,0 +1,10 @@
+# dsh-session-notes bundle patch.
+#
+# Applied as a profile bundle layer (the `dsh.bundle.patch` manifest field).
+# It inserts one loader row whose `name` must stay exactly the package name:
+# the official client-module service mounts a package's browser half on the
+# loader row whose specifier resolves to that package's own manifest, so a
+# subpath name would mount only the host half.
+- insert:
+    - id: session-notes
+      name: dsh-session-notes
